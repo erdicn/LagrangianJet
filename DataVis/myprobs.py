@@ -7,8 +7,8 @@ class MyProbs:
         # print("area under m actual prob        =", np.trapezoid( to_plot.m_actual_probability,     to_plot.m_prob_dist_bin_centers))
         print("area under diameter prob dist   =", np.trapezoid( to_plot.d_prob_density         ,     to_plot.d_prob_dist_bin_centers ))
         print("area under m distribution       =", np.trapezoid( to_plot.m_prob_density,              to_plot.m_prob_dist_bin_centers))
-        if self.d_vol_weighted_ptob_dist is not None:
-            print("area under d prob*volume        =", np.trapezoid( to_plot.d_vol_weighted_ptob_dist, to_plot.d_prob_weighted_dist_bin_centers))
+        if self.d_vol_weighted_prob_dist is not None:
+            print("area under d prob*volume        =", np.trapezoid( to_plot.d_vol_weighted_prob_dist, to_plot.d_prob_weighted_dist_bin_centers))
         
     def fromConcentration(self, diameters, concentration, r = 1.047, center = "geo"):
         #geometric center 
@@ -76,12 +76,12 @@ class MyProbs:
         
         if concentration is not None:
             self.fromConcentration(diameters, concentration)
-            self.d_vol_weighted_ptob_dist        = None
+            self.d_vol_weighted_prob_dist        = None
             self.d_prob_weighted_dist_bin_centers = None
             return
         
         if experimental_prob_vol is not None:
-            self.d_vol_weighted_ptob_dist = experimental_prob_vol 
+            self.d_vol_weighted_prob_dist = experimental_prob_vol 
             self.d_prob_dist_bin_centers  = diameters
             self.d_prob_weighted_dist_bin_centers = diameters
             self.d_prob_density =  probDistByVolToProbDist(experimental_prob_vol, diameters) 
@@ -112,7 +112,7 @@ class MyProbs:
         # self.m_vol_weighted_ptob_dist, self.m_prob_dist_bin_centers, _ = getProbDenistyByVolume(self.m, n_bins)
         
         self.d_prob_density, self.d_prob_dist_bin_centers, _ = getProbDenisty(self.d, n_bins)
-        self.d_vol_weighted_ptob_dist, self.d_prob_weighted_dist_bin_centers, _ = getProbDenistyByVolume(self.d, n_bins)
+        self.d_vol_weighted_prob_dist, self.d_prob_weighted_dist_bin_centers, _ = getProbDenistyByVolume(self.d, n_bins)
         
         self.printSurface()
         
