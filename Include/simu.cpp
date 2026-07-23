@@ -6,6 +6,7 @@
 #include <string>
 #include <chrono>
 #include <sstream>
+#include <filesystem>
 
 #ifdef _OPENMP
 #   include <omp.h>
@@ -16,6 +17,7 @@
 #include "file_manips.hpp"
 #include "OpenMP/test_openmp.h"
 #include "simu.hpp"
+#include "parsing_inputs.hpp"
 
 #include <sys/stat.h>  // For mkdir()
 #include <sys/types.h> // For mode_t
@@ -41,25 +43,37 @@
 #define COLISION_DIST_MULTIPLIER 1
 // #define INCLUDE_ACCELERATION_AND_DRAG 1
 #define DRAG_FORCE_REDUCTION_COEF 1.0f
-// #define USE_CUSTOM_NORMAL_DISTRIBUTION
+// #define USE_CUSTOM_NORMAL_DISTRIBUTION1
 // TODO parametric study witd tcol dia
 
-void createOutFolder(const char* folder_name){
-    // const char* folder_name = OUT_FOLDER_NAME;
-    // Try to create the directory with read/write/execute permissions (0777)
-    int result = mkdir(folder_name, 0777);
+// void createOutFolder(const char* folder_name){
+//     // const char* folder_name = OUT_FOLDER_NAME;
+//     // Try to create the directory with read/write/execute permissions (0777)
+//     int result = mkdir(folder_name, 0777);
     
-    if (result == -1) {
-        // check WHY it failed.
-        if (errno == EEXIST) {
-            printf("The folder '%s' already exists. That's fine!\n", folder_name);
-        } else {
-            // It failed for some other reason 
-            perror("Error creating directory");
-            return; 
+//     if (result == -1) {
+//         // check WHY it failed.
+//         if (errno == EEXIST) {
+//             printf("The folder '%s' already exists. That's fine!\n", folder_name);
+//         } else {
+//             // It failed for some other reason 
+//             perror("Error creating directory");
+//             return; 
+//         }
+//     } else {
+//         printf("Successfully created the folder '%s'!\n", folder_name);
+//     }
+// }
+
+
+extern "C" void createOutFolder(const char* folder_name) {
+    try {
+        // Equivalent to 'mkdir -p' in bash
+        if (std::filesystem::create_directories(folder_name)) {
+            std::cout << "Successfully created folder hierarchy: " << folder_name << "\n";
         }
-    } else {
-        printf("Successfully created the folder '%s'!\n", folder_name);
+    } catch (const std::filesystem::filesystem_error& e) {
+        std::cerr << "Error creating directory: " << e.what() << "\n";
     }
 }
 
@@ -168,7 +182,7 @@ extern "C" LagSimuParams_t* allocateSimuParams() {
     return new LagSimuParams_t(); 
 }
 
-void initCleanLagSimu(int argc, char** args, LagSimuParams_t* simu){
+void initCleanLagSimuOld(int argc, char** args, LagSimuParams_t* simu){
     assert(sizeof(myfloat) == sizeof(double));
     checkArguments(argc, args);
     // testOpeznMP(16);

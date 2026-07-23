@@ -48,7 +48,7 @@ def configureLatexPlot(context="twocolumn", aspect_ratio=None, caption_spacer=0.
             latex_width_inch *= column_size
         fig_width  = latex_width_inch#4.25 
         fig_height = latex_height_inch*caption_spacer # multiplier so i have space for the caption#2.75 
-        base_font_size = 11 # Beamer fonts look big on screen, but base is 11pt
+        base_font_size = 10 # Beamer fonts look big on screen, but base is 11pt
     
     elif context == "halfbeamer":
         # Standard Beamer slide (4:3 aspect ratio)
@@ -96,12 +96,12 @@ def configureLatexPlot(context="twocolumn", aspect_ratio=None, caption_spacer=0.
         # "font.serif": ["Computer Modern Roman"], 
         
         # Scaling everything based on the base_font_size
-        "font.size": base_font_size-1,
-        "axes.titlesize": base_font_size-1,
-        "axes.labelsize": base_font_size-1,
-        "legend.fontsize": base_font_size - 2-1,   # Slightly smaller for space
-        "xtick.labelsize": base_font_size - 2-1,   # Smaller tick labels
-        "ytick.labelsize": base_font_size - 2-1,
+        "font.size": base_font_size,
+        "axes.titlesize": base_font_size,
+        "axes.labelsize": base_font_size,
+        "legend.fontsize": base_font_size - 2,   # Slightly smaller for space
+        "xtick.labelsize": base_font_size - 2,   # Smaller tick labels
+        "ytick.labelsize": base_font_size - 2,
         
         # Set exact figure dimensions
         "figure.figsize": (fig_width, fig_height),

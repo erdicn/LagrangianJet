@@ -59,6 +59,7 @@ LagSimuParams_t* allocateSimuParams();
 void checkArguments(int argc, char** args);
 void createOutFolder(const char* folder_name);
 
+
 #ifndef M_PI
     #define M_PI 3.141592653589793238462643383279502984
 #endif

@@ -6,6 +6,7 @@ TARGET   = exe.exe
 BUILDDIR = build
 SRCDIR   = src
 
+# Change the below paths so it corresponds to your system
 MAT_NUM_INC = /home/erdi/Uni/MyPrograms/MatLib/MathNum/Include
 LAGJET_INC_DIR_SRC = /home/erdi/Uni/LCGAStage/Jets/LagrangianJet/Include
 

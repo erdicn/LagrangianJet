@@ -1,0 +1,248 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{jets_and_sprays}{unpublished}{}{}
+      \name{author}{5}{}{%
+        {{hash=231c9e0a60615ebe410ecc6f2e8cb4bd}{%
+           family={Kooij},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=40be108aa984638f349da504932027be}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Aritro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b6292a6629535cc7d5f5c72f535a2c36}{%
+           family={Parrenin},
+           familyi={P\bibinitperiod},
+           given={Antoine},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9dcf70afa8e8a1105e9f10686af6f559}{%
+           family={Rijn},
+           familyi={R\bibinitperiod},
+           given={Cees\bibnamedelima J.M.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=e0d063d075775a44282c09623b6dec87}{%
+           family={Bonn},
+           familyi={B\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{32f85e32d97858f1f8ad5f04cdeccab7}
+      \strng{fullhash}{46e18b1997f509937e31dac6149bde8d}
+      \strng{fullhashraw}{46e18b1997f509937e31dac6149bde8d}
+      \strng{bibnamehash}{46e18b1997f509937e31dac6149bde8d}
+      \strng{authorbibnamehash}{46e18b1997f509937e31dac6149bde8d}
+      \strng{authornamehash}{32f85e32d97858f1f8ad5f04cdeccab7}
+      \strng{authorfullhash}{46e18b1997f509937e31dac6149bde8d}
+      \strng{authorfullhashraw}{46e18b1997f509937e31dac6149bde8d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{In preparation}
+      \field{title}{Jets and Sprays: Coalescence versus Fragmentation}
+      \field{year}{2026}
+    \endentry
+    \entry{FrachebourgL.1999ESot}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=804d63c01933ab7fa8708064ffe1569b}{%
+           family={Frachebourg},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \strng{namehash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{fullhash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{fullhashraw}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{bibnamehash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{authorbibnamehash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{authornamehash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{authorfullhash}{804d63c01933ab7fa8708064ffe1569b}
+      \strng{authorfullhashraw}{804d63c01933ab7fa8708064ffe1569b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0031-9007}
+      \field{journaltitle}{Physical review letters}
+      \field{number}{7}
+      \field{title}{Exact Solution of the One-Dimensional Ballistic Aggregation}
+      \field{volume}{82}
+      \field{year}{1999}
+      \field{pages}{1502\bibrangedash 1505}
+      \range{pages}{4}
+    \endentry
+    \entry{statistics_of_balistic_agglomeration}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=71b9ae0fd17ceb457ecbc5d908834afb}{%
+           family={Carnevale},
+           familyi={C\bibinitperiod},
+           given={G.\bibnamedelimi F.},
+           giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=1a06ee068773799095293ca3d2274956}{%
+           family={Pomeau},
+           familyi={P\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ea79fb115b63bb593ca36c42b6459282}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={W.\bibnamedelimi R.},
+           giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{45696253ffbe05c4ee74a5ddbfb66b5f}
+      \strng{fullhash}{257097516620e4b92eb978aacaeceba1}
+      \strng{fullhashraw}{257097516620e4b92eb978aacaeceba1}
+      \strng{bibnamehash}{257097516620e4b92eb978aacaeceba1}
+      \strng{authorbibnamehash}{257097516620e4b92eb978aacaeceba1}
+      \strng{authornamehash}{45696253ffbe05c4ee74a5ddbfb66b5f}
+      \strng{authorfullhash}{257097516620e4b92eb978aacaeceba1}
+      \strng{authorfullhashraw}{257097516620e4b92eb978aacaeceba1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{24}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{6}
+      \field{title}{Statistics of ballistic agglomeration}
+      \field{volume}{64}
+      \field{year}{1990}
+      \field{pages}{2913\bibrangedash 2916}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.64.2913
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.64.2913
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.64.2913
+      \endverb
+    \endentry
+    \entry{album_of_fluid_motion}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=3aff9c43a01809a2f8dc8df674ad00ac}{%
+           family={Van\bibnamedelima Dyke},
+           familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Milton},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Parabolic Press}%
+      }
+      \strng{namehash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{fullhash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{fullhashraw}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{bibnamehash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{authorbibnamehash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{authornamehash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{authorfullhash}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \strng{authorfullhashraw}{3aff9c43a01809a2f8dc8df674ad00ac}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0915760029, 9780915760022}
+      \field{title}{An Album of Fluid Motion}
+      \field{year}{1982}
+      \true{nocite}
+    \endentry
+    \entry{drag2020}{misc}{}{}
+      \name{author}{7}{}{%
+        {{hash=0cba8e7db7b46a738e7ca18a8bbe4e73}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Narendra},
+           giveni={N\bibinitperiod}}}%
+        {{hash=90e75205cd7877720e71643d6a3a98b6}{%
+           family={Kroells},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=db64f5cd260cb71286bc6e44b6fe32da}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chenxi},
+           giveni={C\bibinitperiod}}}%
+        {{hash=22c1756937afe64fe50b9f738dfca175}{%
+           family={Ching},
+           familyi={C\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d68dde26344ba3ba6d7e9fa3ddbfe621}{%
+           family={Ihme},
+           familyi={I\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dc66f8d21dbac3bc503337ec07763544}{%
+           family={Hogan},
+           familyi={H\bibinitperiod},
+           given={Christopher\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=5347431e1b7e3130fbdc50fba50e6051}{%
+           family={Schwartzentruber},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{819d1a4f7bb4aa11103ded510839595b}
+      \strng{fullhash}{4dce4d10a338b53c3ce31b0fe10bbcbf}
+      \strng{fullhashraw}{4dce4d10a338b53c3ce31b0fe10bbcbf}
+      \strng{bibnamehash}{819d1a4f7bb4aa11103ded510839595b}
+      \strng{authorbibnamehash}{819d1a4f7bb4aa11103ded510839595b}
+      \strng{authornamehash}{819d1a4f7bb4aa11103ded510839595b}
+      \strng{authorfullhash}{4dce4d10a338b53c3ce31b0fe10bbcbf}
+      \strng{authorfullhashraw}{4dce4d10a338b53c3ce31b0fe10bbcbf}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.flu-dyn}
+      \field{eprinttype}{arXiv}
+      \field{title}{A General Drag Coefficient for Flow over a Sphere}
+      \field{year}{2020}
+      \true{nocite}
+      \verb{eprint}
+      \verb 2012.04813
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2012.04813
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2012.04813
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
