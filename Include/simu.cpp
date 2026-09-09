@@ -223,64 +223,97 @@ void initCleanLagSimuOld(int argc, char** args, LagSimuParams_t* simu){
     simu->batch_start_time = std::chrono::high_resolution_clock::now();
 }
 
-// TODO add batch start time 
+// // TODO add batch start time 
+// void mainLoopCleanLagSimu(LagSimuParams_t* simu, uint32_t nb_frame_simul){
+//     auto nb_to_save = simu->nb_to_save;
+//     auto x_vec = simu->x_vec;
+//     auto r_vec = simu->r_vec;
+//     auto v_vec = simu->v_vec;
+//     auto dt = simu->dt;
+//     auto µs_to_drop = simu->µs_to_drop;
+//     uint32_t while_i = 0;
+//     while (simu->current_saved < nb_to_save && while_i++ < nb_frame_simul){
+//         if(simu->t_ind == simu->next_drop_att_ind || simu->t_ind > simu->next_drop_att_ind){
+//             double dia    = distribution11mm(gen);
+//             // double dia    = uniform_dist_dia_100_165um(gen);
+//             // double volume = diameterToVolume(dia);
+//             // TODO 
+//             // TODO remove for exp
+//             // double vel  = uniform_dist_vel_9_11(gen);
+//             double vel  = dia < 85 ? getLaplaceRandom(sat_mu, sat_b, gen) : normal_dist11mm(gen);
+//             //                         second     to        µs    
+//             // double µs_to_drop = dia < 75 ? getLaplaceRandom(46000, sat_mu, gen) : normal_distfreq(gen);
+//             // µs_to_drop = 1./µs_to_drop * 1e6;
+//             // µs_to_drop = getRandomFloat(15, 30);
+//             #ifdef USE_CUSTOM_NORMAL_DISTRIBUTION
+//                 do{
+//                     µs_to_drop = normal_dist_droplet_enlet_time(gen);
+//                 }while(µs_to_drop < 0); // put this loop so i only get positive dt but if we get negative it puts it instantly since we rescpect the above if condition
+//             #endif
+
+//             simu->next_drop_att_ind +=  round(µs_to_drop/dt);
+//             x_vec     ->vals[simu->current_max_index] = 0;
+//             // volume_vec->vals[current_max_index] = volume;
+//             r_vec     ->vals[simu->current_max_index] = dia/2.;
+//             v_vec     ->vals[simu->current_max_index] = vel;
+//             simu->current_max_index++;
+
+//             if(simu->current_max_index == x_vec->len){
+//                 reallocateFVec(x_vec     , simu->current_max_index*2);
+//                 // reallocateFVec(volume_vec, current_max_index*2);
+//                 reallocateFVec(r_vec     , simu->current_max_index*2);
+//                 reallocateFVec(v_vec     , simu->current_max_index*2);
+//                 std::cout << "Realocating vector to size " << simu->current_max_index*2 << std::endl<<std::flush;
+//             }
+//             // std::cout << t_ind << " " << next_drop_att_ind << std::endl << std::flush;
+//         } 
+
+//         for(int i = 0; i < simu->current_max_index; i++){
+//             #ifdef INCLUDE_ACCELERATION_AND_DRAG
+//                 myfloat acceleration = GRAVITY*1e-6  - DRAG_FORCE_REDUCTION_COEF*0.5*RHO_AIR*MYPOW(v_vec->vals[i], 2)*
+//                                                     funcDragCOefIncompressible(funcReynoldsNbSphereInAirMuVars(r_vec->vals[i], v_vec->vals[i]))*
+//                                                     M_PI*MYPOW(r_vec->vals[i], 2)/
+//                                                     (radiusToVolume(r_vec->vals[i])*RHO_WATER); // here $$a_D = \frac{\rho v^2 C_D A}{2m}$$ and the m = vol*rho_water so the dimensions of the rhos cancel out and we can eep everything else in µ
+
+//                 v_vec->vals[i] += acceleration * dt;
+//                 std::cout <<  v_vec->vals[i] << std::endl;
+//             #endif
+//             x_vec->vals[i] += v_vec->vals[i]*dt; 
+//         }
 void mainLoopCleanLagSimu(LagSimuParams_t* simu, uint32_t nb_frame_simul){
     auto nb_to_save = simu->nb_to_save;
-    auto x_vec = simu->x_vec;
-    auto r_vec = simu->r_vec;
-    auto v_vec = simu->v_vec;
     auto dt = simu->dt;
     auto µs_to_drop = simu->µs_to_drop;
     uint32_t while_i = 0;
+    
     while (simu->current_saved < nb_to_save && while_i++ < nb_frame_simul){
-        if(simu->t_ind == simu->next_drop_att_ind || simu->t_ind > simu->next_drop_att_ind){
-            double dia    = distribution11mm(gen);
-            // double dia    = uniform_dist_dia_100_165um(gen);
-            // double volume = diameterToVolume(dia);
-            // TODO 
-            // TODO remove for exp
-            // double vel  = uniform_dist_vel_9_11(gen);
-            double vel  = dia < 85 ? getLaplaceRandom(sat_mu, sat_b, gen) : normal_dist11mm(gen);
-            //                         second     to        µs    
-            // double µs_to_drop = dia < 75 ? getLaplaceRandom(46000, sat_mu, gen) : normal_distfreq(gen);
-            // µs_to_drop = 1./µs_to_drop * 1e6;
-            // µs_to_drop = getRandomFloat(15, 30);
-            #ifdef USE_CUSTOM_NORMAL_DISTRIBUTION
-                do{
-                    µs_to_drop = normal_dist_droplet_enlet_time(gen);
-                }while(µs_to_drop < 0); // put this loop so i only get positive dt but if we get negative it puts it instantly since we rescpect the above if condition
-            #endif
+        if(simu->t_ind >= simu->next_drop_att_ind){
+            double dia = distribution11mm(gen);
+            double vel = dia < 85 ? getLaplaceRandom(sat_mu, sat_b, gen) : normal_dist11mm(gen);
 
-            simu->next_drop_att_ind +=  round(µs_to_drop/dt);
-            x_vec     ->vals[simu->current_max_index] = 0;
-            // volume_vec->vals[current_max_index] = volume;
-            r_vec     ->vals[simu->current_max_index] = dia/2.;
-            v_vec     ->vals[simu->current_max_index] = vel;
-            simu->current_max_index++;
-
-            if(simu->current_max_index == x_vec->len){
-                reallocateFVec(x_vec     , simu->current_max_index*2);
-                // reallocateFVec(volume_vec, current_max_index*2);
-                reallocateFVec(r_vec     , simu->current_max_index*2);
-                reallocateFVec(v_vec     , simu->current_max_index*2);
-                std::cout << "Realocating vector to size " << simu->current_max_index*2 << std::endl<<std::flush;
+            simu->next_drop_att_ind += round(µs_to_drop / dt);
+            
+            if(simu->current_max_index >= simu->x_vec->len){
+                reallocateFVec(simu->x_vec, simu->current_max_index * 2);
+                reallocateFVec(simu->r_vec, simu->current_max_index * 2);
+                reallocateFVec(simu->v_vec, simu->current_max_index * 2);
             }
-            // std::cout << t_ind << " " << next_drop_att_ind << std::endl << std::flush;
-        } 
 
-        for(int i = 0; i < simu->current_max_index; i++){
-            #ifdef INCLUDE_ACCELERATION_AND_DRAG
-                myfloat acceleration = GRAVITY*1e-6  - DRAG_FORCE_REDUCTION_COEF*0.5*RHO_AIR*MYPOW(v_vec->vals[i], 2)*
-                                                    funcDragCOefIncompressible(funcReynoldsNbSphereInAirMuVars(r_vec->vals[i], v_vec->vals[i]))*
-                                                    M_PI*MYPOW(r_vec->vals[i], 2)/
-                                                    (radiusToVolume(r_vec->vals[i])*RHO_WATER); // here $$a_D = \frac{\rho v^2 C_D A}{2m}$$ and the m = vol*rho_water so the dimensions of the rhos cancel out and we can eep everything else in µ
-
-                v_vec->vals[i] += acceleration * dt;
-                std::cout <<  v_vec->vals[i] << std::endl;
-            #endif
-            x_vec->vals[i] += v_vec->vals[i]*dt; 
+            simu->x_vec->vals[simu->current_max_index] = 0;
+            simu->r_vec->vals[simu->current_max_index] = dia / 2.;
+            simu->v_vec->vals[simu->current_max_index] = vel;
+            simu->current_max_index++;
         }
 
+        // Use direct pointer references
+        fvec_t* x_vec = simu->x_vec;
+        fvec_t* r_vec = simu->r_vec;
+        fvec_t* v_vec = simu->v_vec;
+
+        for(int i = 0; i < simu->current_max_index; i++){
+            x_vec->vals[i] += v_vec->vals[i] * dt;
+        }
+        
         bool merges_occurred;
         do{ 
             /*

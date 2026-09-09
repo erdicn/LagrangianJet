@@ -2,7 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <filesystem>
 #include "simu.hpp"
+
+// ./exe.exe TestFolder/Standart dt=0.01 injection_rate=29.25 recording_distance_in_mm=111 nb_droplets_saved=100
 
 void initCleanLagSimu(int argc, char** args, LagSimuParams_t* simu) {
     assert(sizeof(myfloat) == sizeof(double));
@@ -49,6 +52,17 @@ void initCleanLagSimu(int argc, char** args, LagSimuParams_t* simu) {
 
     createOutFolder(simu->out_folder_name.c_str());
 
+    // Copy the distribution data into the newly created simulation directory
+    try {
+        std::filesystem::path src = "distrib_data.txt";
+        std::filesystem::path dst = std::filesystem::path(simu->out_folder_name) / "distrib_data.txt";
+        
+        std::filesystem::copy_file(src, dst, std::filesystem::copy_options::overwrite_existing);
+        printf(" Copied      : %s -> %s\n", src.c_str(), dst.c_str());
+    } catch (const std::filesystem::filesystem_error& e) {
+        fprintf(stderr, "Warning: Failed to copy distrib_data.txt: %s\n", e.what());
+    }
+
     // Sanity check
     assert(simu->dt < 1);
 
@@ -65,7 +79,7 @@ void initCleanLagSimu(int argc, char** args, LagSimuParams_t* simu) {
     printf(" Folder     : %s\n", simu->out_folder_name.c_str());
     printf(" Inj Rate   : %.4f µs\n", simu->µs_to_drop);
     printf(" Time Step  : %.4f\n", simu->dt);
-    printf(" Rec Dist   : %.2f mm\n", simu->objective_x);
+    printf(" Rec Dist   : %.2f µm = %.2fmm\n", simu->objective_x, simu->objective_x*1e-3);
     printf(" To Save    : %llu droplets\n", (unsigned long long)simu->nb_to_save);
     printf("-------------------------\n\n");
 

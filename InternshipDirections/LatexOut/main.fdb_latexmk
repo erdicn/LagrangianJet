@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber LatexOut/main"] 0 "LatexOut/main.bcf" "LatexOut/main.bbl" "LatexOut/main" 1784808125.36181 -1
-  "LatexOut/main.bcf" 1784808125.27022 108312 551f22e3f3fff7e202699470b8292756 "pdflatex"
+["biber LatexOut/main"] 0 "LatexOut/main.bcf" "LatexOut/main.bbl" "LatexOut/main" 1785160501.98208 -1
+  "LatexOut/main.bcf" 1785160501.8453 108312 551f22e3f3fff7e202699470b8292756 "pdflatex"
   "biblio.bib" 1784734161.10903 1585 7967deddaf81dc3bb62434ecff65f0dd ""
   (generated)
   "LatexOut/main.bbl"
   "LatexOut/main.blg"
   (rewritten before read)
-["pdflatex"] 1784808124.06291 "/home/erdi/Uni/LCGAStage/Jets/LagrangianJet/InternshipDirections/main.tex" "LatexOut/main.pdf" "main" 1784808125.36215 0
+["pdflatex"] 1785160500.19854 "/home/erdi/Uni/LCGAStage/Jets/LagrangianJet/InternshipDirections/main.tex" "LatexOut/main.pdf" "main" 1785160501.98243 0
   "/home/erdi/Uni/LCGAStage/Jets/LagrangianJet/InternshipDirections/main.tex" 1784808123.8757 8848 a6c2f41682462f131debc320e5d83c54 ""
   "/home/erdi/Uni/LCGAStage/Presentations/MajorPresentation/Figures/exp_bonn.png" 1782224185.43115 497869 cdf37a5cb613b13b94e1e1bd1cc3c958 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1775415801 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -172,12 +172,12 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778008611 3765597 f274957313576b9abf0fd1b62e7fc319 ""
   "Figures/Logos/SORBONNE_FAC_SCIENCES_DEF_CMJN.png" 1784733865.69821 667393 caae98a1104853dc4787e59900e0a3a1 ""
   "Figures/Logos/institut_square_logo.jpg" 1784733865.69899 57634 d71bcfc73ca2eaf69a631f4812d67dbe ""
-  "Figures/exp11mm_dia_pdf_lin_lin.pdf" 1784734806.21069 206315 b7ef769192a6b520ff10728b6f9a9759 ""
-  "Figures/exp11mm_vel_pdf_lin_lin.pdf" 1784734803.93263 207341 5fcac3cdafaa37f19d6c3963d26e765b ""
-  "LatexOut/main.aux" 1784808125.26722 2699 6725c1ea1eb6cae97e2e0e0d481be824 "pdflatex"
+  "Figures/exp11mm_dia_pdf_lin_lin.pdf" 1785160500.02046 206315 b96bfb32388de9672c38fada63f93103 ""
+  "Figures/exp11mm_vel_pdf_lin_lin.pdf" 1785160499.5745 207341 887d37645c4a1f06ae8e46e25d8e9c40 ""
+  "LatexOut/main.aux" 1785160501.8393 2699 6725c1ea1eb6cae97e2e0e0d481be824 "pdflatex"
   "LatexOut/main.bbl" 1784734570.21404 9444 07a7794b7d3afca11f82e9eb80ff45ec "biber LatexOut/main"
-  "LatexOut/main.out" 1784808125.26922 436 43c2f5cdbad927b28a2c1f61ae560cc7 "pdflatex"
-  "LatexOut/main.run.xml" 1784808125.27305 2428 faa361e55d7ae9c4ab3898ff278482c8 "pdflatex"
+  "LatexOut/main.out" 1785160501.8433 436 43c2f5cdbad927b28a2c1f61ae560cc7 "pdflatex"
+  "LatexOut/main.run.xml" 1785160501.84875 2428 faa361e55d7ae9c4ab3898ff278482c8 "pdflatex"
   "main.tex" 1784808123.8757 8848 a6c2f41682462f131debc320e5d83c54 ""
   (generated)
   "LatexOut/main.aux"

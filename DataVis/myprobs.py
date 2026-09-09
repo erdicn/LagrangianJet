@@ -120,7 +120,7 @@ class MyProbs:
     def initFromFolder(cls, folder_path, label, n_bins=500, linestyle='-', diameters_to_si=1e-6, vel_to_si=1):
         return cls(diameters  = diameters_to_si*getDataFromFolder(get_from_dir=folder_path, file_name_regex="radius*.dat")*2,
                    velocities = vel_to_si      *getDataFromFolder(get_from_dir=folder_path, file_name_regex="velocity*.dat"),
-                   label=label)
+                   label=label, n_bins=n_bins)
         
     @classmethod
     def initFromFolderList(cls, l_folder_paths, label, n_bins=500, linestyle='-', diameters_to_si=1e-6, vel_to_si=1):
